@@ -1,0 +1,24 @@
+<h1>Create an Account</h1>
+<form method="post">
+    {{#if error}}<p id="error">{{error}}</p>{{/if}}
+    {{#if message}}<p id="message">{{message}}</p>{{/if}}
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="phoneNumber">Phone Number</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required>
+    <br>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <label for="confirm-password">Confirm Password</label>
+    <input type="password" id="confirm-password" name="confirm-password" required>
+    <br>
+    <button type="submit">Submit</button>
+    <br>
+    <p>Already have an account? <a href="/login">Log in.</a></p>
+</form>
+<script src="/static/js/create_account.js"></script>

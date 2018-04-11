@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <title>CS 576 Sample Blog</title>
+</head>
+
+<body>
+    <main id="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        {{#if user}}
+                        <a href="/logout">Log out</a>
+                        {{else}}
+                        <a href="/login">Log in</a>
+                        {{/if}}
+                    </li>
+                    <li><a href="/myblog">My Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="body-container">
+            {{{body}}}
+        </main>
+        <footer>
+            <hr>
+            <p>CS 576 Sample Blog</p>
+        </footer>
+    </main>
+</body>
+
+</html>
