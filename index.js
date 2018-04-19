@@ -6,6 +6,8 @@ const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt-nodejs");
 let configRoutes = require("./routes");
 
+let sanitizeMiddleware = require("./sanitize");
+
 const config = require("./config/config");
 
 const userData = require("./data/users");
@@ -50,6 +52,8 @@ app.set("view engine", "handlebars");
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(sanitizeMiddleware);
 
 configRoutes(app);
 
