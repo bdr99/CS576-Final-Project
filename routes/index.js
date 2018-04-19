@@ -41,8 +41,6 @@ const constructorMethod = (app) => {
     });
 
     app.get("/blog/:uid", async (req, res) => {
-        //req.params.uid
-
         if (req.user && req.user._id === req.params.uid){
             return res.redirect("/myblog");
         }
