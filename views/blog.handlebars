@@ -1,9 +1,9 @@
 {{#if error}}<p id="error">{{error}}</p>{{/if}}
 {{#if message}}<p id="message">{{message}}</p>{{/if}}
-<h1>{{blogUser.profile.name}}'s Blog</h1>
+<h1>{{{blogUser.profile.name}}}'s Blog</h1>
 {{#each posts}}
     <article>
-        <h3>{{this.title}}</h3>
-        <p>{{this.content}}</p>
+        <h3>{{{this.title}}}</h3>
+        <p>{{{this.content}}}</p>
     </article>
 {{/each}}
