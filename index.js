@@ -39,7 +39,7 @@ passport.deserializeUser(function (username, done) {
 let app = express();
 
 app.use(express.urlencoded({ extended: true }));
-app.use(session({ secret: config.SESSION_SECRET, resave: true, saveUninitialized: true }));
+app.use(session({ secret: config.SESSION_SECRET, resave: true, saveUninitialized: true, cookie: { httpOnly: false } }));
 
 const handlebarsInstance = exphbs.create({
     defaultLayout: "main"
