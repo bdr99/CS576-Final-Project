@@ -1,2 +1,9 @@
 <img src="static/images/office.jpg" class="office-image" alt="Office">
 <p>This is a sample blog that will be used to demonstrate XSS and CSRF vulnerabilities.</p>
+<hr style="clear: both; margin-top: 20px;">
+<h2>All Blogs</h2>
+<ul>
+{{#each users}}
+    <li><a href="/blog/{{this._id}}">{{this.profile.name}}'s blog</a></li>
+{{/each}}
+</ul>

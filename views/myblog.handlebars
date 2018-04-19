@@ -1,6 +1,21 @@
 <h1>My Blog</h1>
 {{#if error}}<p id="error">{{error}}</p>{{/if}}
 {{#if message}}<p id="message">{{message}}</p>{{/if}}
-<article>
-    <h2>{{user.profile.name}}'s Blog</h2>
-</article>
+<h2>Write a new post</h2>
+<form method="post">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" required>
+    <br>
+    <label for="content">Content</label>
+    <textarea id="content" name="content" rows="8" cols="50"></textarea>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<hr>
+<h2>{{user.profile.name}}'s Blog</h2>
+{{#each posts}}
+    <article>
+        <h3>{{this.title}}</h3>
+        <p>{{this.content}}</p>
+    </article>
+{{/each}}

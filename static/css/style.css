@@ -67,11 +67,13 @@ nav li a:hover {
 .office-image {
     width: 350px;
     float: left;
-    margin: 0px 10px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 article {
-    width: 410px;
+    width: 100%;
     float: left;
     padding: 5px;
     margin: 10px;
