@@ -27,6 +27,8 @@
             </nav>
         </header>
         <main id="body-container">
+            {{#if error}}<p id="error">{{{error}}}</p>{{/if}}
+            {{#if message}}<p id="message">{{{message}}}</p>{{/if}}
             {{{body}}}
         </main>
         <footer>

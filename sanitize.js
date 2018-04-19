@@ -3,14 +3,16 @@ let htmlEncodeCharacter = function (char) {
 };
 
 let sanitizeMiddleware = function (req, res, next) {
-    let app = res.app;
+    let originalRenderFunction = res.render;
 
-    let originalRenderFunction = app.render;
+    res.render = function (view, locals, callback) {
+        let renderLocals = locals;
+        if (typeof locals === "object"){
+            renderLocals = JSON.parse(JSON.stringify(locals));
+            sanitizeObject(renderLocals);
+        }
 
-    app.render = function (view, data, callback) {
-        if (typeof data === "object") sanitizeObject(data);
-
-        originalRenderFunction.call(app, view, data, callback);
+        originalRenderFunction.call(res, view, renderLocals, callback);
     };
 
     next();

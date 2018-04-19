@@ -1,15 +1,13 @@
 <h1>Edit Profile</h1>
 <form method="post">
-    {{#if error}}<p id="error">{{error}}</p>{{/if}}
-    {{#if message}}<p id="message">{{message}}</p>{{/if}}
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" value="{{user.profile.name}}" required>
+    <input type="text" id="name" name="name" value="{{{user.profile.name}}}" required>
     <br>
     <label for="phoneNumber">Phone Number</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" value="{{user.profile.phoneNumber}}" required>
+    <input type="text" id="phoneNumber" name="phoneNumber" value="{{{user.profile.phoneNumber}}}" required>
     <br>
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" value="{{user.profile.email}}" required>
+    <input type="email" id="email" name="email" value="{{{user.profile.email}}}" required>
     <br>
     <button type="submit">Submit</button>
 </form>

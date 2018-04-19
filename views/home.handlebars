@@ -4,6 +4,6 @@
 <h2>All Blogs</h2>
 <ul>
 {{#each users}}
-    <li><a href="/blog/{{this._id}}">{{this.profile.name}}'s blog</a></li>
+    <li><a href="/blog/{{{this._id}}}">{{{this.profile.name}}}'s blog</a></li>
 {{/each}}
 </ul>

@@ -1,6 +1,4 @@
 <h1>My Blog</h1>
-{{#if error}}<p id="error">{{error}}</p>{{/if}}
-{{#if message}}<p id="message">{{message}}</p>{{/if}}
 <h2>Write a new post</h2>
 <form method="post">
     <label for="title">Title</label>
@@ -12,10 +10,10 @@
     <button type="submit">Submit</button>
 </form>
 <hr>
-<h2>{{user.profile.name}}'s Blog</h2>
+<h2>{{{user.profile.name}}}'s Blog</h2>
 {{#each posts}}
     <article>
-        <h3>{{this.title}}</h3>
-        <p>{{this.content}}</p>
+        <h3>{{{this.title}}}</h3>
+        <p>{{{this.content}}}</p>
     </article>
 {{/each}}
