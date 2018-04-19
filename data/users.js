@@ -48,7 +48,7 @@ let exportedMethods = {
         if (userObj.profile) updatedUser.profile = userObj.profile;
 
         let userCollection = await users();
-        await userCollection.updateOne({ _id: id }, updatedUser);
+        await userCollection.updateOne({ _id: id }, {"$set": updatedUser});
         return await this.getUserById(id);
     }
 };
