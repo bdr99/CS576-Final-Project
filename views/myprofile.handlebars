@@ -1,0 +1,10 @@
+<h1>My Profile</h1>
+{{#if error}}<p id="error">{{error}}</p>{{/if}}
+{{#if message}}<p id="message">{{message}}</p>{{/if}}
+<article>
+    <h2>Profile</h2>
+    <p><strong>Email</strong>: {{user.profile.email}}</p>
+    <p><strong>Name</strong>: {{user.profile.name}}</p>
+    <p><strong>Phone Number</strong>: {{user.profile.phoneNumber}}</p>
+    <a href="/edit_profile">Edit your profile</a>
+</article>

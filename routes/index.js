@@ -50,6 +50,19 @@ const constructorMethod = (app) => {
         });
     });
 
+    app.get("/myprofile", (req, res) => {
+        if (!req.user){
+            res.redirect("/login?error=" + encodeURIComponent("You must login before accessing this page"));
+            return;
+        }
+
+        res.render("myprofile", {
+            user: req.user,
+            error: req.query.error,
+            message: req.query.message
+        });
+    });
+
     app.get("/edit_profile", (req, res) => {
         if (!req.user){
             res.redirect("/login?error=" + encodeURIComponent("You must login before accessing this page"));
