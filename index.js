@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt-nodejs");
 let configRoutes = require("./routes");
 
 let sanitizeMiddleware = require("./sanitize");
+let csrfMiddleware = require("./csrf");
 
 const config = require("./config/config");
 
@@ -54,6 +55,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(sanitizeMiddleware);
+app.use(csrfMiddleware);
 
 configRoutes(app);
 
