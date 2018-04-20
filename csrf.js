@@ -37,10 +37,14 @@ let csrfMiddleware = function (req, res, next) {
 function csrfProtectHTML(html, sessionID){
     let $ = cheerio.load(html);
 
+    //Create hidden HTML form field
     let hidden = cheerio.load("<input type='hidden' name='CSRFtoken'>")("input");
+    //Set its value to the CSRF token
     hidden.attr("value", bcrypt.hashSync(sessionID + config.CSRF_SECRET));
+    //Append it all forms on the page
     $("form").append(hidden);
 
+    //Convert the DOM tree back to HTML and return it as a string
     return $.html();
 }
 

@@ -1,7 +1,9 @@
+//HTML-sanitizes a single character
 let htmlEncodeCharacter = function (char) {
     return "&#x" + char.charCodeAt(0).toString(16) + ";";
 };
 
+//Middleware that sanitizes templating data before it is rendered to the HTML
 let sanitizeMiddleware = function (req, res, next) {
     let originalRenderFunction = res.render;
 
@@ -18,6 +20,7 @@ let sanitizeMiddleware = function (req, res, next) {
     next();
 };
 
+//HTML-sanitizes all string values in an object
 let sanitizeObject = function (obj) {
     Object.keys(obj).forEach(function (key) {
         if (typeof obj[key] === "string") {
@@ -26,9 +29,9 @@ let sanitizeObject = function (obj) {
             sanitizeObject(obj[key]);
         }
     });
-
 };
 
+//HTML-sanitizes a single string
 let sanitizeString = function (str) {
     return str.split("").map(htmlEncodeCharacter).join("");
 };
