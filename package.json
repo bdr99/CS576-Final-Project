@@ -4,7 +4,8 @@
   "description": "A simple blog application to demonstrate XSS and CSRF flaws.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "csrf": "node csrf_attack.js"
   },
   "repository": {
     "type": "git",
