@@ -6,8 +6,8 @@ const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt-nodejs");
 let configRoutes = require("./routes");
 
-let sanitizeMiddleware = require("./sanitize");
-let csrfMiddleware = require("./csrf");
+let sanitizeMiddleware = require("./middleware/sanitize");
+let csrfMiddleware = require("./middleware/csrf");
 
 const config = require("./config/config");
 
