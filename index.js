@@ -54,6 +54,7 @@ app.set("view engine", "handlebars");
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Our custom middleware functions
 app.use(sanitizeMiddleware);
 app.use(csrfMiddleware);
 
