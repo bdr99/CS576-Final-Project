@@ -1,5 +1,5 @@
 const cheerio = require("cheerio");
-const config = require("./config/config");
+const config = require("../config/config");
 const bcrypt = require("bcrypt-nodejs");
 
 let csrfMiddleware = function (req, res, next) {
