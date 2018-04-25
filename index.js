@@ -54,7 +54,7 @@ app.set("view engine", "handlebars");
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Our custom middleware functions
+//Our custom middleware functions - comment out these lines to disable protection
 app.use(sanitizeMiddleware);
 app.use(csrfMiddleware);
 
