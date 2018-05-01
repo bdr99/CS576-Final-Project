@@ -15,5 +15,8 @@ The XSS protection is achieved by an Express middleware function which is contai
 ## CSRF protection
 The CSRF protection also takes the form of an Express middleware function, located in [`middleware/csrf.js`](middleware.csrf.js). This middleware has two parts. The first part replaces the built-in `res.send` function with one that modifies any HTML pages before they are delivered in the HTTP response. It adds a hidden element to all HTML forms containing a CSRF token which is unique to the user's session. The second part, which runs on all `POST` requests, validates the token and rejects the request if it is incorrect or missing.
 
+## Enabling Protections
+The protections are imported into the application via `require` statements on lines 9 and 10 in [`index.js`](index.js), and are attached to the Express application on lines 58 and 59. Simply uncommenting these lines is all that is required to protect this web application against XSS and CSRF attacks.
+
 ## Authors
 Brandon Rothweiler, Scott Enriquez, Javier Serrano
